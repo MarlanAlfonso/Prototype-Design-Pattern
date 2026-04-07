@@ -14,6 +14,7 @@ public class TestAnimal {
 
         System.out.println("\nCloning animals...");
 
+        // CLONED / MODIFIED
         Sheep sheep2 = registry.createSheep("Shaun");
         Cow cow2 = registry.createCow("Moo Moo");
         Horse horse2 = registry.createHorse("Black");
