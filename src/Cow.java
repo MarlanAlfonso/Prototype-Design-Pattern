@@ -9,13 +9,16 @@ public class Cow implements Animal {
         this.food = food;
     }
 
-    public void setSound(String sound) {
-        this.sound = sound;
+    // Copy constructor for cloning
+    private Cow(Cow other) {
+        this.legs = other.legs;
+        this.sound = other.sound;
+        this.food = other.food;
     }
 
     @Override
     public Animal clone() {
-        return new Cow(legs, sound, food);
+        return new Cow(this);
     }
 
     @Override
@@ -27,4 +30,11 @@ public class Cow implements Animal {
     public String getType() {
         return "Cow";
     }
+
+    public int getLegs() { return legs; }
+    public void setLegs(int legs) { this.legs = legs; }
+    public String getSound() { return sound; }
+    public void setSound(String sound) { this.sound = sound; }
+    public String getFood() { return food; }
+    public void setFood(String food) { this.food = food; }
 }
