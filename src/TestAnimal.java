@@ -1,26 +1,27 @@
 public class TestAnimal {
     public static void main(String[] args) {
-
         AnimalRegistry registry = new AnimalRegistry();
 
-        // ORIGINAL PROTOTYPES
-        Sheep sheep1 = registry.createSheep("Dolly");
-        Cow cow1 = registry.createCow("Moo");
-        Horse horse1 = registry.createHorse("Brown");
+        Animal sheep = registry.createSheep("Dolly");
+        Animal cow   = registry.createCow();
+        Animal horse = registry.createHorse();
 
-        sheep1.makeSound();
-        cow1.makeSound();
-        horse1.makeSound();
+        sheep.makeSound();
+        cow.makeSound();
+        horse.makeSound();
 
-        System.out.println("\nCloning animals...");
+        System.out.println("Cloning animals...");
 
-        // CLONED / MODIFIED
-        Sheep sheep2 = registry.createSheep("Shaun");
-        Cow cow2 = registry.createCow("Moo Moo");
-        Horse horse2 = registry.createHorse("Black");
+        Animal clonedSheep = registry.createSheep("Shaun");
 
-        sheep2.makeSound();
-        cow2.makeSound();
-        horse2.makeSound();
+        Animal clonedCow = cow.clone();
+        ((Cow) clonedCow).setSound("Moo Moo");
+
+        Animal clonedHorse = horse.clone();
+        ((Horse) clonedHorse).setColor("Black");
+
+        clonedSheep.makeSound();
+        clonedCow.makeSound();
+        clonedHorse.makeSound();
     }
 }
