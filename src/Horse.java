@@ -11,13 +11,17 @@ public class Horse implements Animal {
         this.color = color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    // Copy constructor for cloning
+    private Horse(Horse other) {
+        this.legs = other.legs;
+        this.sound = other.sound;
+        this.food = other.food;
+        this.color = other.color;
     }
 
     @Override
     public Animal clone() {
-        return new Horse(legs, sound, food, color);
+        return new Horse(this);
     }
 
     @Override
@@ -29,4 +33,13 @@ public class Horse implements Animal {
     public String getType() {
         return "Horse";
     }
+
+    public int getLegs() { return legs; }
+    public void setLegs(int legs) { this.legs = legs; }
+    public String getSound() { return sound; }
+    public void setSound(String sound) { this.sound = sound; }
+    public String getFood() { return food; }
+    public void setFood(String food) { this.food = food; }
+    public String getColor() { return color; }
+    public void setColor(String color) { this.color = color; }
 }
