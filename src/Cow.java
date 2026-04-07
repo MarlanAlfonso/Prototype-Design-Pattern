@@ -9,6 +9,10 @@ public class Cow implements Animal {
         this.food = food;
     }
 
+    public void setSound(String sound) {
+        this.sound = sound;
+    }
+
     @Override
     public Animal clone() {
         return new Cow(legs, sound, food);
@@ -16,7 +20,7 @@ public class Cow implements Animal {
 
     @Override
     public void makeSound() {
-        System.out.println("Cow says: " + sound);
+        System.out.println("Cow makes sound " + sound);
     }
 
     @Override

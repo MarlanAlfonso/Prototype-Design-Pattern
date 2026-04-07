@@ -22,7 +22,7 @@ public class Sheep implements Animal {
 
     @Override
     public void makeSound() {
-        System.out.println(name + " says: " + sound);
+        System.out.println("Sheep name is " + name);
     }
 
     @Override

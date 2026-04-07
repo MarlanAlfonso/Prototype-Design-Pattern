@@ -11,6 +11,10 @@ public class Horse implements Animal {
         this.color = color;
     }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     @Override
     public Animal clone() {
         return new Horse(legs, sound, food, color);
@@ -18,7 +22,7 @@ public class Horse implements Animal {
 
     @Override
     public void makeSound() {
-        System.out.println("Horse says: " + sound);
+        System.out.println("Horse has color " + color);
     }
 
     @Override
